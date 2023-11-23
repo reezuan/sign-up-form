@@ -14,17 +14,21 @@ body {
     margin: 0;
 }
 
+/* ----- IMAGE CONTAINER ----- */
+
 .image-container {
     background-image: url(assets/qys70l89m8y51.jpg);
     height: 100vh;
     width: clamp(100px, 45vw, 828px);
 }
 
+/* ----- SIGNUP CONTAINER ----- */
+
 .signup-container {
     color: white;
     padding: 50px 40px;
     height: 100vh;
-    width: min(1000px, 100%);
+    width: min(1200px, 100%);
 
     /* Display */
     display: flex;
@@ -32,16 +36,77 @@ body {
     justify-content: center;
 }
 
+.header-container {
+    margin-bottom: 40px;
+}
+
 .header-container > p {
     font-size: 1.8rem;
 }
 
+/* Form & input fields */
+
 .form-row {
     display: flex;
     justify-content: space-between;
+    gap: 70px;
+    margin-bottom: 30px;
+}
+
+.form-row:nth-last-child(2) {
+    margin-bottom: 50px;
 }
 
 .form-field {
     display: flex;
     flex-direction: column;
+    justify-content: end;
+    flex: 1 1 0;
+}
+
+.input-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-label > p {
+    margin: 0 0 6px;
+}
+
+label {
+    margin-bottom: 6px;
+    font-size: 1.15rem;
+}
+
+input {
+    height: 35px;
+    border: 0;
+    border-radius: 7px;
+    display: block;
+}
+
+input::after {
+    content: "hello";
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+    background-color: rgb(238, 165, 157)
+}
+
+.form-field:has(input:not(:focus):not(:placeholder-shown):invalid) > .input-label > .error-message {
+    display: flex;
+    font-size: 0.8rem;
+    align-items: end;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #AA967B;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.error-message {
+    display: none;
 }
