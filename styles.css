@@ -59,7 +59,7 @@ body {
 }
 
 .form-row:nth-last-child(2) {
-    margin-bottom: 50px;
+    margin-bottom: 75px;
 }
 
 .form-field {
@@ -105,11 +105,12 @@ input:not(:focus):not(:placeholder-shown):invalid {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 14px 25px;
     background-color: #AA967B;
     border: 0;
     border-radius: 5px;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .error-message {
