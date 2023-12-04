@@ -34,11 +34,9 @@
                 
                     <div class="form-row">
                         <div class="form-field">
-                            <div class="input-label">
-                                <label for="email">Email<sup><span aria-label="required">*</span></sup></label>
-                                <p class="error-message">⚠️ Please enter a valid email address.</p>
-                            </div>
+                            <label for="email">Email<sup><span aria-label="required">*</span></sup></label>
                             <input type="email" id="email" name="email" placeholder=" " required />
+                            <p class="error-message">⚠️ Please enter a valid email address.</p>
                         </div>
                         <div class="form-field">
                             <label for="phone-number">Phone number</label>
@@ -61,7 +59,8 @@
                     </div>
 
                     <div class="form-row">
-                        <button type="submit">Bless my inbox</button>
+                        <button type="submit">Create my account</button>
+                        <p>Got an account already? <a href="#">Log in here.</a></p>
                     </div>
                 </form>
             </div>
@@ -78,6 +77,8 @@
                     confirmPassword.setCustomValidity("Passwords don't match");
                 }
             }
+            // Credits to this article for showing me the above snippet:
+            // https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page
         </script>
     </body>
 </html>

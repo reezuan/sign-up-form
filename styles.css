@@ -33,7 +33,7 @@ body {
     color: white;
     padding: 50px 40px;
     height: 100vh;
-    width: min(1200px, 55vw);
+    width: min(1200px, 60vw);
 
     /* Display */
     display: flex;
@@ -42,11 +42,15 @@ body {
 }
 
 .header-container {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .header-container > p {
-    font-size: 1.8rem;
+    font-size: calc(1vw + 0.9rem);
+}
+
+.header-container > p:first-child {
+    margin-top: 5px;
 }
 
 /* Form & input fields */
@@ -59,7 +63,11 @@ body {
 }
 
 .form-row:nth-last-child(2) {
-    margin-bottom: 75px;
+    margin-bottom: 55px;
+}
+
+.form-row:last-child {
+    display: block;
 }
 
 .form-field {
@@ -104,6 +112,14 @@ input:not(:focus):not(:placeholder-shown):invalid {
     align-items: end;
 }
 
+.form-field:has(input:not(:focus):not(:placeholder-shown):invalid) > p {
+    display: flex;
+    position: relative;
+    top: 20px;
+    font-size: 0.8rem;
+    align-items: end;
+}
+
 button {
     padding: 14px 25px;
     background-color: #AA967B;
@@ -115,4 +131,14 @@ button {
 
 .error-message {
     display: none;
+}
+
+button + p {
+    font-size: 0.8rem;
+}
+
+p a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #AA967B;
 }
