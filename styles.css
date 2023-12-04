@@ -58,6 +58,7 @@ body {
 .form-row {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     gap: 70px;
     margin-bottom: 30px;
 }
@@ -73,7 +74,7 @@ body {
 .form-field {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     flex: 1 1 0;
 }
 
@@ -96,28 +97,24 @@ input {
     border: 0;
     border-radius: 7px;
     display: block;
-}
-
-input::after {
-    content: "hello";
+    padding-left: 8px;
 }
 
 input:not(:focus):not(:placeholder-shown):invalid {
     background-color: rgb(238, 165, 157)
 }
 
-.form-field:has(input:not(:focus):not(:placeholder-shown):invalid) > .input-label > .error-message {
-    display: flex;
+.form-field:has(input:not(:focus):not(:placeholder-shown):invalid)::after {
     font-size: 0.8rem;
-    align-items: end;
+    margin-top: 8px;
 }
 
-.form-field:has(input:not(:focus):not(:placeholder-shown):invalid) > p {
-    display: flex;
-    position: relative;
-    top: 20px;
-    font-size: 0.8rem;
-    align-items: end;
+.form-field.email-input:has(input:not(:focus):not(:placeholder-shown):invalid)::after {
+    content: "⚠️ Please enter a valid email.";
+}
+
+.form-field.confirm-password-input:has(input:not(:focus):not(:placeholder-shown):invalid)::after {
+    content: "⚠️ Your passwords don't match.";
 }
 
 button {
@@ -127,10 +124,6 @@ button {
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
-}
-
-.error-message {
-    display: none;
 }
 
 button + p {
