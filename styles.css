@@ -78,15 +78,6 @@ body {
     flex: 1 1 0;
 }
 
-.input-label {
-    display: flex;
-    justify-content: space-between;
-}
-
-.input-label > p {
-    margin: 0 0 6px;
-}
-
 label {
     margin-bottom: 6px;
     font-size: 1.15rem;
@@ -134,4 +125,66 @@ p a {
     font-size: 0.8rem;
     text-decoration: none;
     color: #AA967B;
+}
+
+/* ----------------------------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    /* ----- IMAGE CONTAINER ----- */
+
+    .image-container {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .image-container img {
+        width: 100vw;
+        height: auto;
+    }
+
+    /* ----- SIGNUP CONTAINER ----- */
+
+    .signup-container {
+        padding: 30px 30px;
+        height: auto;
+        width: 100vw;
+    }
+
+    .header-container {
+        margin-bottom: 10px;
+    }
+
+    /* Form & input fields */
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 0;
+    }
+
+    .form-row:nth-last-child(2) {
+        margin-bottom: 20px;
+    }
+
+    .form-field {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+    
+    button + p {
+        text-align: center;
+    }
 }
